@@ -48,3 +48,25 @@ RegisterCommand('entitywipe', function()
 TriggerServerEvent('aspect:deletevehicle')
 SendToDiscord("Entity Wipe", "**"..GetPlayerName(source).."** (ID: "..source..") Has done an Entity Wipe")
 end, false)
+
+
+
+
+
+
+
+function startup()
+    print([[^2
+    _____                                __   
+    /  _  \   ____________   ____   _____/  |_ 
+   /  /_\  \ /  ___/\____ \_/ __ \_/ ___\   __\
+  /    |    \\___ \ |  |_> >  ___/\  \___|  |  
+  \____|__  /____  >|   __/ \___  >\___  >__|  
+          \/     \/ |__|        \/     \/     
+		Start Up!
+    ]])	
+end
+Citizen.CreateThread(function()
+    startup()
+    print("^2[Aspect] Script Loaded. Support? https://discord.gg/vAyNySyXCx")
+end)
