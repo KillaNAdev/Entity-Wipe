@@ -53,13 +53,6 @@ TriggerServerEvent('aspect:deletevehicle')
 SendToDiscord("Entity Wipe", "**"..GetPlayerName(source).."** (ID: "..source..") Has done an Entity Wipe")
 			end
 end, false)
-
-
-
-
-
-
-
 function startup()
     print([[^4
     _____                                __   
