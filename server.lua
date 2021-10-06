@@ -1,3 +1,7 @@
+ESX = nil
+
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+
 local webhook = "";
 function SendToDiscord(name, msg, col)
 	local embed = {
@@ -41,12 +45,13 @@ AddEventHandler('aspect:deletevehicle', function()
     end
 end)
 RegisterCommand('entitywipe', function()
-
+if  IsPlayerAceAllowed(source, "Staff") then  -- Edit the ace are modify this part up to you!
     TriggerClientEvent('chat:addMessage', -1, {
         template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(0, 0, 255, 1); border-radius: 3px;"><i class="fas fa-users"></i> <b>[Entity Wipe!] '.. GetPlayerName(source) ..'</b> <i>Has done an Entity Wipe.</i></div>'
     });
 TriggerServerEvent('aspect:deletevehicle')
 SendToDiscord("Entity Wipe", "**"..GetPlayerName(source).."** (ID: "..source..") Has done an Entity Wipe")
+			end
 end, false)
 
 
