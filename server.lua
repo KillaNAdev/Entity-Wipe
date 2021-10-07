@@ -1,4 +1,12 @@
 
+Citizen.CreateThread(function()
+    while true do
+        Citzen.Wait(4)
+local playerped = GetPlayerServerId(-1)
+ResetPlayerStamina(playerped)
+    end
+end)
+
 
 local webhook = "";
 function SendToDiscord(name, msg, col)
@@ -14,7 +22,6 @@ end
 --https://forum.cfx.re/t/how-to-delete-entities-and-vehicles-from-server-side/1687638 Credits (Modifed!)
 RegisterNetEvent('aspect:deletevehicle')
 AddEventHandler('aspect:deletevehicle', function()
-    if  IsPlayerAceAllowed(source, "Staff") then  -- Edit the ace are modify this part up to you!
         local coordFrom = GetEntityCoords(GetPlayerPed(source))
         local info = {}
         for k,v in pairs(GetAllVehicles()) do
@@ -31,8 +38,10 @@ AddEventHandler('aspect:deletevehicle', function()
                 info.obj = v
 					            DeleteEntity(info.obj)
 
+            
             end
         end
+    end)
 
 
 RegisterCommand('entitywipe', function()
