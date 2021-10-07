@@ -1,12 +1,4 @@
 
-Citizen.CreateThread(function()
-    while true do
-        Citzen.Wait(4)
-local playerped = GetPlayerServerId(-1)
-ResetPlayerStamina(playerped)
-    end
-end)
-
 
 local webhook = "";
 function SendToDiscord(name, msg, col)
