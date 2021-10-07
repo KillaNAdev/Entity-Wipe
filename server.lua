@@ -31,19 +31,12 @@ AddEventHandler('aspect:deletevehicle', function()
             if DoesEntityExist(v) and info.dist > dist then
                 info.dist = dist
                 info.obj = v
+					            DeleteEntity(info.obj)
+
             end
         end
 
-        if info.dist < 2000 then
-            DeleteEntity(info.obj)
-            if DoesEntityExist(info.obj) then
-            xPlayer.showNotification('Vehicle Deleted!')
-            end
-        else
-            xPlayer.showNotification('Vehicle Not Found!')
-        end
-    end
-end)
+
 RegisterCommand('entitywipe', function()
 if  IsPlayerAceAllowed(source, "Staff") then  -- Edit the ace are modify this part up to you!
     TriggerClientEvent('chat:addMessage', -1, {
