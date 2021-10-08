@@ -1,5 +1,3 @@
-
-
 local webhook = "";
 function SendToDiscord(name, msg, col)
 	local embed = {
