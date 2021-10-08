@@ -1,13 +1,11 @@
 local webhook = "" -- Add your webhook here
 
 function SendToDiscord(name, msg)
-	local embed = {
-		{
-			["color"] = 9109247, -- If you have an issue with the string like this change it to "9109247"
-			["title"] = "**" .. name .. "**",
-			["description"] = msg,
-		}
-	}
+	local embed = {{
+        ["color"] = 9109247, -- If you have an issue with the string like this change it to "9109247"
+        ["title"] = "**" .. name .. "**",
+        ["description"] = msg,
+    }}
 	PerformHttpRequest(webhook, function(err, text, headers)
 	end, 'POST', json.encode({username = "Entity Wipe Log", embeds = embed, avatar_url = "https://cdn.discordapp.com/attachments/891828087912796190/892186680839254086/fcdev.png"}), {['Content-Type'] = 'application/json'})
 end
@@ -21,9 +19,9 @@ RegisterServerEvent('aspect:deletevehicle', function()
 		if dist < 2000 then
 			if DoesEntityExist(v) then
 				DeleteEntity(v)
-			end
-		end
-	end
+            end
+        end
+    end
 end)
 
 RegisterCommand('entitywipe', function(source)
