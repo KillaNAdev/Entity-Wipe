@@ -1,5 +1,6 @@
 local webhook = "EDIT_HERE" -- Add your webhook here
 local color = 9109247 -- Don't Edit
+local ace = "" -- Edit this for your ace.
 function SendToDiscord(name, msg)
 	local embed = {{
         ["color"] = color, 
@@ -25,10 +26,12 @@ RegisterNetEvent('aspect:deletevehicle', function(playerId)
 end)
 
 RegisterCommand('entitywipe', function(source)
+		 if ace then
 	local playerId <const> = source
 	TriggerClientEvent('chat:addMessage', -1, {
 		template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(128, 128 ,128, 1); border-radius: 3px;"><i class="fas fa-users"></i> <b>[Entity Wipe!] ' .. GetPlayerName(playerId) .. '</b> <i>Has done an Entity Wipe.</i></div>'
 	});
 	TriggerEvent('aspect:deletevehicle', tonumber(source))
 	SendToDiscord("Entity Wipe", "**" .. GetPlayerName(playerId) .. "** (ID: " .. tostring(playerId) .. ") Has done an Entity Wipe")
-end, true) -- Only admins can do the command
+			end
+end, false
