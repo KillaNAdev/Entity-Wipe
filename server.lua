@@ -1,8 +1,8 @@
-local webhook = "" -- Add your webhook here
-
+local webhook = "EDIT_HERE" -- Add your webhook here
+local color = 9109247 -- Don't Edit
 function SendToDiscord(name, msg)
 	local embed = {{
-        ["color"] = 9109247, -- If you have an issue with the string like this change it to "9109247"
+        ["color"] = color, 
         ["title"] = "**" .. name .. "**",
         ["description"] = msg,
     }}
@@ -27,7 +27,7 @@ end)
 RegisterCommand('entitywipe', function(source)
 	local playerId <const> = source
 	TriggerClientEvent('chat:addMessage', -1, {
-		template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(0, 0, 255, 1); border-radius: 3px;"><i class="fas fa-users"></i> <b>[Entity Wipe!] ' .. GetPlayerName(playerId) .. '</b> <i>Has done an Entity Wipe.</i></div>'
+		template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(128, 128 ,128, 1); border-radius: 3px;"><i class="fas fa-users"></i> <b>[Entity Wipe!] ' .. GetPlayerName(playerId) .. '</b> <i>Has done an Entity Wipe.</i></div>'
 	});
 	TriggerEvent('aspect:deletevehicle', tonumber(source))
 	SendToDiscord("Entity Wipe", "**" .. GetPlayerName(playerId) .. "** (ID: " .. tostring(playerId) .. ") Has done an Entity Wipe")
