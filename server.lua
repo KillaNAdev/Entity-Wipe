@@ -11,8 +11,8 @@ function SendToDiscord(name, msg)
 end
 
 --https://forum.cfx.re/t/how-to-delete-entities-and-vehicles-from-server-side/1687638 Credits (Modified!)
-RegisterServerEvent('aspect:deletevehicle', function()
-	local coords = GetEntityCoords(GetPlayerPed(source))
+RegisterNetEvent('aspect:deletevehicle', function(playerId)
+	local coords = GetEntityCoords(GetPlayerPed(playerId))
 	for _, v in pairs(GetAllVehicles()) do
 		local objCoords = GetEntityCoords(v)
 		local dist = #(coords - objCoords)
@@ -29,6 +29,6 @@ RegisterCommand('entitywipe', function(source)
 	TriggerClientEvent('chat:addMessage', -1, {
 		template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(0, 0, 255, 1); border-radius: 3px;"><i class="fas fa-users"></i> <b>[Entity Wipe!] ' .. GetPlayerName(playerId) .. '</b> <i>Has done an Entity Wipe.</i></div>'
 	});
-	TriggerEvent('aspect:deletevehicle')
+	TriggerEvent('aspect:deletevehicle', tonumber(source))
 	SendToDiscord("Entity Wipe", "**" .. GetPlayerName(playerId) .. "** (ID: " .. tostring(playerId) .. ") Has done an Entity Wipe")
 end, true) -- Only admins can do the command
