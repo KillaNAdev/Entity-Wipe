@@ -1,13 +1,9 @@
 # Entity-Wipe
-Created for my Latest Project.
+A simple entity deleter.
 
-## Install
+## Installation
+
+1) Edit the local webhook with your discord webhook link for logging entity wipes!
+2) Add the folder to your server resources.
+3) Add `ensure Entity-Wipe` to your server.cfg
 ```
-Edit the local webhook with your discord webhook link for the Entiy Wipes!
-Add to your server.
-
-```
----
-## Giving out 🍪, To People that follow me!
-
----
