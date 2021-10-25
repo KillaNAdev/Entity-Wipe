@@ -34,4 +34,4 @@ RegisterCommand('entitywipe', function(source)
 	TriggerEvent('aspect:deletevehicle', tonumber(source))
 	SendToDiscord("Entity Wipe", "**" .. GetPlayerName(playerId) .. "** (ID: " .. tostring(playerId) .. ") Has done an Entity Wipe")
 			end
-end, false
+end, false)
